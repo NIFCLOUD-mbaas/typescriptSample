@@ -1,8 +1,7 @@
 # NCMB SDK implement with typescript + nodejs
 ## **Employee Management**  
-NCMB SDKを利用して、Typescriptとnodejsで実装しているサンプルアプリです。
-
-社員を追加、編集、削除や検索機能の社員管理アプリです。
+NCMB SDKを利用して、Typescriptとnodejsで実装しているサンプルアプリです。  
+社員を追加、編集、削除や検索機能の社員管理アプリです。  
 <img src="./readme-img/overview.gif" width="480px;">
 
 # アプリの機能:
@@ -45,7 +44,7 @@ npm install -g typescript
 
 ## 2. GitHubからサンプルプロジェクトのダウンロード
 ```
-git clone --depth=1 https://github.com/vfa-tamhh/ncmb_typescript.git <project_name>
+git clone --depth=1 https://github.com/NIFCloud-mbaas/typescriptSample.git <project_name>
 ```
 - dependenciesをインストールします
 ```
@@ -54,9 +53,9 @@ npm install
 ```
 ## 3. VScodeでアプリを起動
 
-- VScodeを開いて、Fileから、Openで適当なプロジェクトを選択します。
+- VScodeを開いて、Fileから、Openで適当なプロジェクトを選択します。  
 ![image](/readme-img/005.png)
-- フォルダは下図ような画面となります。
+- フォルダは下図ような画面となります。  
 ![image](/readme-img/006.png)
 
 ## 4. APIキーの設定
