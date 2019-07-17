@@ -1,0 +1,34 @@
+{
+  "results":[
+    {
+      "Name":"Eliza",
+      "Department":"Administrator",
+      "Age":25,
+      "Gender":0
+    },
+    {
+      "Name":"Nowar",
+      "Department":"Administrator",
+      "Age":30,
+      "Gender":1
+    },
+    {
+      "Name":"Yamada",
+      "Department":"Human resource",
+      "Age":18,
+      "Gender":0
+    },
+    {
+      "Name":"Kanata",
+      "Department":"Customer services",
+      "Age":35,
+      "Gender":1
+    },
+    {
+      "Name":"Jimmy",
+      "Department":"Administrator",
+      "Age":22,
+      "Gender":1
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "name": "ncmb-typescript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npm run serve",
+    "build": "npm run build-ts && npm run copy-static-assets",
+    "serve": "node dist/server.js",
+    "watch-node": "nodemon dist/server.js",
+    "watch": "\"npm run watch-node\"",
+    "build-ts": "tsc",
+    "copy-static-assets": "ts-node copyStaticAssets.ts",
+    "build-and-run": "npm run build && npm run start"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "4.15.3",
+    "pug": "^2.0.3",
+    "@types/node": "7.0.22",
+    "ncmb": "^3.0.0",
+    "nodemon": "1.11.0",
+    "ts-node": "8.3.0",
+    "typescript": "3.5.2",
+    "@types/jquery": "^3.1.1",
+    "fs-extra": "8.1.0",
+    "body-parser": "^1.18.2",
+    "dotenv": "^4.0.0"
+  },
+  "devDependencies": {
+    "@types/bootstrap": "3.3.33"
+  }
+}

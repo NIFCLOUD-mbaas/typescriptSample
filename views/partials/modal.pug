@@ -1,0 +1,43 @@
+div.modal.fade(id="_form" tabindex="-1" role="dialog" aria-labelledby="_form" aria-hidden="true")
+  div.modal-dialog(role="document")
+    div.modal-content
+      div.modal-header
+        h5.modal-title(id="_form-title")
+        button.close(data-dismiss="modal" aria-label="Close")
+          span(aria-hidden="true") &times;
+      form(action="../employee/new" method="POST" id="employee-form")
+        div.modal-body
+          div.form-group
+            input.form-control(type="text" id="objectId" name="objectId" hidden)
+          div.form-group
+            label.col-form-label(for="name") Name:
+            input.form-control(type="text" id="name" name="name")
+          div.form-group
+            label.col-form-label(for="department") Department:
+            input.form-control(type="text" id="department" name="department")
+          div.form-group
+            label.col-form-label(for="age") Age:
+            input.form-control(type="number" id="age" name="age")
+          div.form-group
+            label.col-form-label(for="gender") Gender:
+            select.browser-default.custom-select(name="gender" id="gender")
+              option(value="0") Woman
+              option(value="1") Man
+        div.modal-footer
+          button.btn.btn-secondary(type="button" data-dismiss="modal") Cancel
+          button.btn.btn-success(type="submit" id="btn-save-update")
+div.modal.fade(id="_deleteModal" tabindex="-1" role="dialog" aria-labelledby="_deleteModal" aria-hidden="true")
+  div.modal-dialog(role="document")
+    div.modal-content
+      div.modal-header
+        h5.modal-title(id="_deleteModal-title")  Confirm dialog
+        button.close(data-dismiss="modal" aria-label="Close")
+          span(aria-hidden="true") &times;
+      form(action="../employee/delete" method="POST")
+        div.modal-body
+          p(id="content")
+          div.form-group
+            input.form-control(type="text" id="id" name="id" hidden)
+        div.modal-footer
+          button.btn.btn-secondary(type="button" data-dismiss="modal") Cancel
+          button.btn.btn-danger(type="submit") Delete

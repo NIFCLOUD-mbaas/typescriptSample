@@ -1,0 +1,54 @@
+html {
+    position: relative;
+    min-height: 100%;
+}
+  
+body {
+    padding-top: 12px;
+    margin-bottom: 75px;
+}
+  
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+footer p, ul {
+    margin-bottom: 0;
+}
+#btn-new{
+    float: right;
+}
+.btn-add, .btn-edit, .btn-delete {
+    color: white;
+    margin-left: 12px;
+}
+.btn-edit:hover {
+    color: white !important;
+}
+.action {
+    text-align: center;
+}
+.header-title {
+    text-align: center;
+    font-size: 22pt;
+    font-weight: bold;
+}
+.table-main {
+    margin-top: 8px;
+}
+.hidden-class {
+    display: none;
+}
+.toast-message {
+    position: fixed;
+    width: 320px;
+    right: 12px;
+}
+.no-data-result {
+    font-weight: bold;
+    text-align: center;
+}
+.error-page {
+    text-align: center;
+}

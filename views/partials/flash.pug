@@ -1,0 +1,11 @@
+if messages
+  if messages["errors"]
+    #error.alert.alert-danger.fade.show.toast-message
+      button.close(type='button', data-dismiss='alert')
+        span(aria-hidden="true") &times;
+      div= messages["message"]
+  if messages["message"] && !messages["errors"]
+    #info.alert.alert-success.fade.show.toast-message
+      button.close(type='button', data-dismiss='alert')
+        span(aria-hidden="true") &times;
+      div= messages["message"]

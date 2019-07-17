@@ -1,0 +1,54 @@
+extends layout
+
+block content
+  div.header-title Welcome to NCMB sample
+  br
+  div.row
+    div.col-md-6.align-self-center
+      h2 Employee Details
+    div.col-md-6
+      button.btn.btn-dark(id ="btn-new" type="button") Add new Employee
+  form(action="../employee/search" method="post")
+    div.row
+      div.col-md-3
+      div.col-md-2
+        select.browser-default.custom-select(name="colName")
+          option(value="None" selected=(colName == 'None') ) Select filed
+          option(value="Name" selected=(colName == 'Name') ) Name
+          option(value="Department" selected=(colName == 'Department') ) Department
+          option(value="Age" selected=(colName == 'Age')) Age
+          option(value="Gender" selected=(colName == 'Gender')) Gender
+      div.col-md-3
+        input.form-control(type="text" placeholder="Search" aria-label="Search" name="searchCondition" value=(searchCondition) )
+      div.col-md-1
+        button.btn.btn-dark(type='submit') Search
+      div.col-md-3
+
+  table.table.table-striped.table-hover.table-main
+    thead
+      tr
+        th(scope='col') Name
+        th(scope='col') Department
+        th(scope='col') Age
+        th(scope='col') Gender
+        th.action(scope='col') Action
+    tbody
+      if employee
+        each val in employee
+          tr
+            td= val.Name
+            td= val.Department
+            td= val.Age
+            if val.Gender == 1
+              td Man
+            else
+              td Woman
+            td.action
+              button.btn-edit.btn.btn-warning(type="button" data-id=(val.objectId)) Edit 
+              button.btn-delete.btn.btn-danger(type="button" data-id=(val.objectId) data-name=(val.Name)) Delete
+        else
+          tr
+            td.no-data-result(colspan="5") No result data.
+      else
+        tr
+          td.no-data-result(colspan="5") No entry data.
