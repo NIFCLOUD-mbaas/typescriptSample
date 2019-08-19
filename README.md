@@ -1,73 +1,76 @@
-# NCMB SDK implement with typescript + nodejs
+# NIFCloud mobile backend SDK implement with typescript + nodejs
 ## **Employee Management**  
-NCMB SDKを利用して、Typescriptとnodejsで実装しているサンプルアプリです。  
-社員を追加、編集、削除や検索機能の社員管理アプリです。  
+NIFCloud mobile backend JavaScript SDKを利用して、TypeScriptとNode.jsで実装しているサンプルアプリです。  
+社員を追加、編集、削除、検索という管理機能ができる社員管理アプリです。  
 <img src="./readme-img/overview.gif" width="480px;">
 
-# アプリの機能:
-* [x] 新社員を追加
+# アプリの機能
+こちらのサンプルは実現する機能は以下のようにあります。
+* [x] 新しい社員を追加
 * [x] 社員の情報を編集
-* [x] 名前、部分、年齢、性別などの条件で検索
+* [x] 名前、部署、年齢、性別などの絞り込み条件で検索
 * [x] 社員を削除
 
 # 内容:
-- [ニフクラ mobile backendって何？？](#ニフクラ-mobile-backendって何？？)  
+- [ニフクラ mobile backendとは？](#ニフクラ-mobile-backendって何？？)  
 - [動作環境](#動作環境)  
 - [手順](#手順)  
 - [参考](#参考)
 
-# ニフクラ mobile backendって何？？
-* スマートフォンアプリのバックエンド機能（プッシュ通知・データストア・会員管理・ファイルストア・SNS連携・位置情報検索・スクリプト）が開発不要、しかも基本無料(注1)で使えるクラウドサービス！
+# ニフクラ mobile backendとは？
+* スマートフォンアプリのバックエンド機能（プッシュ通知・データストア・会員管理・ファイルストア・SNS連携・位置情報検索・スクリプト）が開発不要、しかも基本無料(注1)で簡単に使えるクラウドサービスです。今回は主にデータストア機能を利用します。
 * 注1：詳しくは[こちら](https://mbaas.nifcloud.com/price.htm)をご覧ください
 ![image](/readme-img/002.png)
 
 # 動作環境
-ローカル化するように以下の手順をご実装ください:
-1. インストール [Node.js](https://nodejs.org/en/)
-1. インストール [VS Code](https://code.visualstudio.com/)
-1. インストール [Typescript](https://www.npmjs.com/package/typescript)  
-`npm`経由でTypeScriptがインストールやすくなります。
+ローカルで動作確認する環境を準備には以下の手順を行ってください。
+1. [Node.js](https://nodejs.org/en/)をインストール
+1. [VS Code](https://code.visualstudio.com/)をインストール
+1.  [Typescript](https://www.npmjs.com/package/typescript)をインストール
+`npm`を経由し、TypeScriptをインストールすることが簡単です。
 
 ```
 npm install -g typescript
 ```
 
-# 手順
+# 動作確認する手順
 
 ## 1. ニフクラウドアカウントの登録・新規アプリを作成
 - [ニフクラウドmobile backend の会員登録](https://console.mbaas.nifcloud.com/signup)・ログインとアプリの新規作成
 - 上記リンクから会員登録（無料）をします。登録ができたらログインをすると下図のように「アプリの新規作成」画面が出るのでアプリを作成します
   ![image](/readme-img/003.png)
-- アプリ作成されると下図のような画面になります
-- この２種類のAPIキー（アプリケーションキーとクライアントキー）があります
+- アプリの作成が完了されますと、下図のように、作成されたアプリのAPIキー（アプリケーションキーとクライアントキー）が表示されます。こちらのキーはアプリ設定画面でも確認されます。
   ![image](/readme-img/004.png)
 
 ## 2. GitHubからサンプルプロジェクトのダウンロード
 ```
 git clone --depth=1 https://github.com/NIFCloud-mbaas/typescriptSample.git <project_name>
 ```
+※`<project_name>`には好みのプロジェクト名を入れてください。
 - dependenciesをインストールします
 ```
 cd <project_name>
 npm install
 ```
-## 3. VScodeでアプリを起動
+## 3. VScodeでプロジェクトを起動
 
-- VScodeを開いて、Fileから、Openで適当なプロジェクトを選択します。  
+- VScodeを開いて、Fileから、Openで上記でダウンロードしたプロジェクトを選択します。  
 ![image](/readme-img/005.png)
-- フォルダは下図ような画面となります。  
+- ソースコードのフォルダ構成は以下のようになります。  
 ![image](/readme-img/006.png)
 
-## 4. APIキーの設定
+## 4. APIキーを設定
 
-- `.env`ファイルを開いて、それぞれYOUR_NCMB_APPLICATION_KEYとYOUR_NCMB_CLIENT_KEYの部分を書き換えます。
+- `.env`ファイルを開いて、それぞれ`=`の後ろ部分にあるYOUR_APPLICATION_KEYとYOUR_CLIENT_KEYを書き換えます。
 ![image](/readme-img/007.png)
 
 ## 5. アプリのデータを準備
-ニフクラ mobile backendにログインして、"Create"で"Import"を選択します。
+
+- ニフクラ mobile backendにログインして、該当するアプリを選択します。「データストア」タブを選択し、「＋作成」の緑ボタンをクリックします。
+表示されるメニューから`インポート`を選択します。
 ![image](/readme-img/008.png)  
 
-- `Data/employee.json`ファイルを選択してインポートします。クラス名を`Employee` にします。
+- プロジェクト内にある`Data/employee.json`ファイルを選択してインポートします。クラス名を`Employee` を入力します。
 ![image](/readme-img/009.png)  
 
 - インポート後のデータは以下のとおりです。
@@ -75,46 +78,47 @@ npm install
 
 ## 6. ビルドを実施・結果を確認
 
+- コマンドラインにて以下のコマンドを実施します。
 ```
 cd <project_name>
 npm run build
 npm run start
 ```
 - ブラウザで`http://127.0.0.1:3000`へアクセスします。
-- `[Add new Employee]`ボタンで社員を追加します。
+- `[Add new Employee]`ボタンをクリックし、新規社員を追加します。
 ![image](/readme-img/011.png)
-- 下図のような画面の情報を入力して、"Save" ボタンを押します。
+- 新規社員を入力する画面にて、情報を入力し、"Save" ボタンを押します。
 ![image](/readme-img/012.png)
-- ニフクラウドコンソールで結果を確認します。
+- mobile backendの管理画面で結果を登録したことを確認します。
 ![image](/readme-img/013.png)
+- 社員の情報編集および削除は一覧にある`Edit`と`Delete`ボタンにて実施してください。
 
-# 参考
+# コード解説
   ## 1. 構造を説明
-  
-コンパイル後、`src`フォルダのTypeScript (`.ts`)は`dist`フォルダのJavaScript (`.js`)になります。
-`views`フォルダは親フォルダにあります。
+
+ビルドした後、`dist`フォルダが作成されます。`src`フォルダにあるTypeScript (`.ts`)は`dist`フォルダのJavaScript (`.js`)にコンパイルされます。
 
 各フォルダの内容は以下の通りです。
 
-> **注意** `npm run build`でアプリのビルドを完了したはずです。
+> **注意** `npm run build`でアプリのビルドを実施されます。
 
 | フォルダ | 説明 |  
 | ------------------------ | --------------------------------------------------------------------------------------------- |  
-| **dist**                 | ビルド後のコードを含む                                                      |  
-| **node_modules**         | 全てのnpm dependenciesを含む                                                 |  
-| **src**                  | typescriptのコードを含み、コンパイル後で  distフォルダに位置する。               |  
-| **src/controllers**      | HTTPからリクエストのリダイレクトファイルを含む                                                    |  
-| **src/public**           | Front endのファイルを含む                                                        |  
-| **src/types**            | ncmb.d.tsファイルを含む                                                        |  
+| **dist**                 | ビルド後のコードが含まれています                                                     |  
+| **node_modules**         | 全てのnpm dependenciesが含まれています                                                 |  
+| **src**                  | typescriptのコードが含まれています               |  
+| **src/controllers**      | HTTPからリクエストのリダイレクト・コントロールするファイルが含まれています                                                    |  
+| **src/public**           | Front endのファイルが含まれています                                                        |  
+| **src/types**            | ncmb.d.tsファイルが含まれています                                                        |  
 | **src**/server.ts        | Entry point to your express app                                                               |  
-| **views**                | HTMLをRenderする用Pug templateファイルを含む                                           |  
-| .env             　　　　 | `YOUR_APPLICATION_KEY` と `YOUR_CLIENT_KEY`を含む    |  
-| .copyStaticAssets.ts     | distへ画像、css, jsをコピーするスクリプトだ                                     |  
-| package.json             | 案件で使用しているdependenciesを含む                                               |  
-| tsconfig.json            | TypeScriptのコンパイル設定を含む                                               |  
+| **views**                | HTMLをRenderする用Pug templateファイルが含まれています                                           |  
+| .env             　　　　 | `YOUR_APPLICATION_KEY` と `YOUR_CLIENT_KEY`を設定するファイル    |  
+| .copyStaticAssets.ts     | distへ画像、css, jsをコピーするスクリプト                                     |  
+| package.json             | 使用しているdependenciesが含まれています                                               |  
+| tsconfig.json            | TypeScriptのコンパイル設定が含まれています                                               |  
 
 ### TypeScriptのコンパイル設定
-- コンパイルを設定するように`tsconfig.json` ファイルを使用しています。 コンフィッグ設定はこちらの[参考](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html) をご確認ください。
+- コンパイルを設定するために`tsconfig.json` ファイルを使用します。 詳細設定は[こちら](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html) をご参考ください。
 
 ```json
 "compilerOptions": {
@@ -138,7 +142,7 @@ npm run start
 ]
 ```
   ## 2. ソースコードを説明
-  - `package.json`ファイルにて設定されて、使用しているNCMB SDKのバージョンが3.0.0
+  - `package.json`ファイルにてdependenciesが設定されて、本サンプルにて使用しているmobile backendのJavaScript SDKのバージョンが3.0.0と指定しております。
 
   ```json
   "dependencies": {
@@ -147,14 +151,14 @@ npm run start
     ...
   }
   ```
-  - [dst-gen](https://github.com/Microsoft/dts-gen)ツールでDefinitelyTypedを実施します。
-  
+  - 定義ファイルについて、[dst-gen](https://github.com/Microsoft/dts-gen)ツールでDefinitelyTypedを作成します。
+
   ```
   dts-gen -m ncmb
   ```
-  - DefinitelyTypedを実施した後で`ncmb.d.ts`が作成されて、`src/types`フォルダに`ncmb.d.ts`をコピーします。
-  - `tsconfig.json`コンフィッグを設定することにより`ncmb.d.ts`へ参照しています。
-  
+  - dts-genを実施した後で`ncmb.d.ts`が作成されて、`src/types`フォルダに`ncmb.d.ts`をコピーします。
+  - `tsconfig.json`コンフィッグファイルを設定することにより`ncmb.d.ts`へ参照するようになります。
+
 
   ```json
   "baseUrl": ".",
@@ -165,9 +169,9 @@ npm run start
         ]
     }
   ```
-  -  `.env`ファイルで`YOUR_APPLICATION_KEY` と `YOUR_CLIENT_KEY`を設定します。
-  -  ncmbを起動するために`src/services/baseService.ts`ファイルを作成します。
- 
+  -  `.env`ファイルで手順の説明にて`YOUR_APPLICATION_KEY` と `YOUR_CLIENT_KEY`を設定します。
+  -  ncmbを起動するために以下のように`src/services/baseService.ts`ファイルを作成します。
+
   ```ts
   import NCMB from "ncmb";
 export default class BaseService {
@@ -183,8 +187,8 @@ export default class BaseService {
   ```
 
   - 追加、編集、削除と検索機能を実施するように`src/services/employeeService.ts`ファイルを作成します。
-  
-  ```ts
+
+```ts
   import BaseService from "./baseservice";
 
 class EmployeeServices extends BaseService {
@@ -207,13 +211,13 @@ class EmployeeServices extends BaseService {
         });
         return object
     }
-
-    ...
+    <<省略>>
 }
 export default new EmployeeServices()
-  ```
-  - インターフェースファイルへレンダリングして、リダイレクトするように`src/controllers/home.ts`ファイルを作成します。(pugテンプレート)
-  
+```
+
+  - UIファイルをRenderingして、リダイレクトするため、`src/controllers/home.ts`ファイルを作成します。(pugテンプレート)
+
 
   ```ts
   import { Request, Response } from "express";
@@ -231,10 +235,11 @@ export const index = async (req: Request, res: Response) => {
   });
 };
 
-...
+    <<省略>>
   ```
-   - `src/controllers/home.ts`から返却された値を表示するように `views/home.pug`ファイルを作成します。
   
+   - 最後に、`src/controllers/home.ts`から返却された値を表示するために `views/home.pug`ファイルを作成します。
+
 
    ```js
    extends layout
@@ -283,7 +288,7 @@ block content
             else
               td Woman
             td.action
-              button.btn-edit.btn.btn-warning(type="button" data-id=(val.objectId)) Edit 
+              button.btn-edit.btn.btn-warning(type="button" data-id=(val.objectId)) Edit
               button.btn-delete.btn.btn-danger(type="button" data-id=(val.objectId) data-name=(val.Name)) Delete
         else
           tr
@@ -292,13 +297,15 @@ block content
         tr
           td.no-data-result(colspan="5") No entry data.
    ```
+
+
 # Contributing
 - Fork it!
 - Create your feature branch: git checkout -b my-new-feature
 - Commit your changes: git commit -am 'Add some feature'
 - Push to the branch: git push origin my-new-feature
-- Submit a pull request 
+- Submit a pull request
+
 # License
 MITライセンス  
 NIFCloud mobile backendのJavascript SDKのライセンス
-
