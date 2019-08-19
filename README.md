@@ -2,6 +2,7 @@
 ## **Employee Management**  
 NIFCloud mobile backend JavaScript SDKを利用して、TypeScriptとNode.jsで実装しているサンプルアプリです。  
 社員を追加、編集、削除、検索という管理機能ができる社員管理アプリです。  
+
 <img src="./readme-img/overview.gif" width="480px;">
 
 # アプリの機能
@@ -52,6 +53,7 @@ git clone --depth=1 https://github.com/NIFCloud-mbaas/typescriptSample.git <proj
 cd <project_name>
 npm install
 ```
+
 ## 3. VScodeでプロジェクトを起動
 
 - VScodeを開いて、Fileから、Openで上記でダウンロードしたプロジェクトを選択します。  
@@ -68,12 +70,15 @@ npm install
 
 - ニフクラ mobile backendにログインして、該当するアプリを選択します。「データストア」タブを選択し、「＋作成」の緑ボタンをクリックします。
 表示されるメニューから`インポート`を選択します。
+
 ![image](/readme-img/008.png)  
 
 - プロジェクト内にある`Data/employee.json`ファイルを選択してインポートします。クラス名を`Employee` を入力します。
+
 ![image](/readme-img/009.png)  
 
 - インポート後のデータは以下のとおりです。
+
 ![image](/readme-img/010.png)  
 
 ## 6. ビルドを実施・結果を確認
@@ -87,10 +92,13 @@ npm run start
 - ブラウザで`http://127.0.0.1:3000`へアクセスします。
 - `[Add new Employee]`ボタンをクリックし、新規社員を追加します。
 ![image](/readme-img/011.png)
+
 - 新規社員を入力する画面にて、情報を入力し、"Save" ボタンを押します。
 ![image](/readme-img/012.png)
+
 - mobile backendの管理画面で結果を登録したことを確認します。
 ![image](/readme-img/013.png)
+
 - 社員の情報編集および削除は一覧にある`Edit`と`Delete`ボタンにて実施してください。
 
 # コード解説
@@ -172,8 +180,8 @@ npm run start
   -  `.env`ファイルで手順の説明にて`YOUR_APPLICATION_KEY` と `YOUR_CLIENT_KEY`を設定します。
   -  ncmbを起動するために以下のように`src/services/baseService.ts`ファイルを作成します。
 
-  ```ts
-  import NCMB from "ncmb";
+```ts
+import NCMB from "ncmb";
 export default class BaseService {
     public ncmb: any
     constructor () {
@@ -189,7 +197,7 @@ export default class BaseService {
   - 追加、編集、削除と検索機能を実施するように`src/services/employeeService.ts`ファイルを作成します。
 
 ```ts
-  import BaseService from "./baseservice";
+import BaseService from "./baseservice";
 
 class EmployeeServices extends BaseService {
     constructor () {
@@ -219,8 +227,8 @@ export default new EmployeeServices()
   - UIファイルをRenderingして、リダイレクトするため、`src/controllers/home.ts`ファイルを作成します。(pugテンプレート)
 
 
-  ```ts
-  import { Request, Response } from "express";
+```ts
+import { Request, Response } from "express";
 import employeeServices from "../services/employeeServices";
 
 /**
@@ -235,14 +243,14 @@ export const index = async (req: Request, res: Response) => {
   });
 };
 
-    <<省略>>
-  ```
-  
+<<省略>>
+```
+
    - 最後に、`src/controllers/home.ts`から返却された値を表示するために `views/home.pug`ファイルを作成します。
 
 
-   ```js
-   extends layout
+```js
+extends layout
 
 block content
   div.header-title Welcome to NCMB sample
@@ -296,7 +304,7 @@ block content
       else
         tr
           td.no-data-result(colspan="5") No entry data.
-   ```
+```
 
 
 # Contributing
