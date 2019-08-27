@@ -1,7 +1,7 @@
-# NIFCloud mobile backend SDK implement with typescript + nodejs
-## **Employee Management**  
-NIFCloud mobile backend JavaScript SDKを利用して、TypeScriptとNode.jsで実装しているサンプルアプリです。  
-社員を追加、編集、削除、検索という管理機能ができる社員管理アプリです。  
+# NIFCloud mobile backend JavaScript SDK + TypeScript + Node.jsのサンプル
+## **社員管理ウエブサイト**  
+NIFCloud mobile backend JavaScript SDKを利用して、TypeScriptとNode.jsで実装しているサンプルウエブサイトです。  
+社員を追加、編集、削除、検索という管理機能ができる社員管理ウエブアプリです。  
 
 <img src="./readme-img/overview.gif" width="480px;">
 
@@ -159,7 +159,7 @@ npm run start
     ...
   }
   ```
-  - 定義ファイルについて、[dst-gen](https://github.com/Microsoft/dts-gen)ツールでDefinitelyTypedを作成します。
+  - 定義ファイルについて、[dts-gen](https://github.com/Microsoft/dts-gen)ツールでDefinitelyTypedを作成します。
 
   ```
   dts-gen -m ncmb
