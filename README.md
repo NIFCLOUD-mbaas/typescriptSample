@@ -1,4 +1,10 @@
 # NIFCloud mobile backend JavaScript SDK + TypeScript + Node.jsのサンプル
+
+```
+現在こちらのリポジトリは正常に動作しておりません。ご不便をおかけしていますが、順次改修対応を進めておりますので、今しばらくお待ちください。
+今後ともNIFCLOUD mobile backendをどうぞよろしくお願いいたします。
+```
+
 ## **社員管理ウエブサイト**  
 NIFCloud mobile backend JavaScript SDKを利用して、TypeScriptとNode.jsで実装しているサンプルウエブサイトです。  
 社員を追加、編集、削除、検索という管理機能ができる社員管理ウエブアプリです。  
